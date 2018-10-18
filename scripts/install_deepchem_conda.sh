@@ -37,18 +37,19 @@ fi
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
    source activate root
-   conda install -y -q conda=4.3.25
+   conda install -y -q conda=4.3.34
    source activate $envname
+   conda install -y -q python=3.5.3
 fi
 
-conda install -y -q -c conda-forge joblib=0.11 \
-    rdkit=2018.03.4 \
-    scikit-learn=0.20.0 \
-    nose=1.3.7 \
-    requests=2.18.4 \
-    matplotlib=3.0.0 \
-    xgboost=0.80 \
-    setuptools=39.0.1 \
+conda config --add channels conda-forge
+conda config --add channels rdkit
+
+conda install -y -q joblib=0.11 \
+    rdkit=2017.09.3 \
+    scikit-learn \
+    matplotlib \
+    xgboost \
     pandas \
-    molvs
-conda install -y -q -c $tensorflow=1.9.0
+    molvs \
+    $tensorflow=1.9.0
