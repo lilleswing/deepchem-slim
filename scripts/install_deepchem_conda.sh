@@ -52,4 +52,5 @@ conda install -y -q joblib=0.11 \
     xgboost \
     pandas \
     molvs \
-    $tensorflow=1.9.0
+    $tensorflow=1.9.0 \
+    jupyter
